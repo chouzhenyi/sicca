@@ -1,0 +1,9 @@
+# @format
+
+packages:
+  # 应用
+  - "app/**"
+  # 组件
+  - "components/**"
+  # 公共代码
+  - "utils/**"

@@ -1,0 +1,19 @@
+/** @format */
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+#root {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.appContent {
+  flex: 1;
+}

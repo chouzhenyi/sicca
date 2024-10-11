@@ -1,0 +1,43 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      defer
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      defer
+    ></script>
+    <script src="dist/bundle.mjs" defer></script>
+    <script src="dist/out.js" defer></script>
+    <script>
+      const data = new Proxy(
+        {},
+        {
+          get(target, propKey, receiver) {
+            console.log("get", target, propKey, receiver);
+            Reflect.get(target, propKey, receiver);
+          },
+          set(target, propKey, value, receiver) {
+            console.log(`setting ${propKey}!`);
+            return Reflect.set(target, propKey, value, receiver);
+          },
+        }
+      );
+      data.name = "王德发";
+      console.log(data.name);
+    </script>
+  </head>
+  <body>
+    <h1>测试网页</h1>
+    <div id="react-app"></div>
+  </body>
+</html>
