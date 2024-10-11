@@ -16,7 +16,8 @@
     "dev:esbuild": "pnpm run --filter @sicca/esbuild dev",
     "deploy:esbuild": "pnpm run --filter @sicca/esbuild deploy",
     "prettier:esbuild": "pnpm run --filter @sicca/esbuild prettier",
-    "eslint:esbuild": "pnpm run --filter @sicca/esbuild eslint"
+    "eslint:esbuild": "pnpm run --filter @sicca/esbuild eslint",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=18",
@@ -29,5 +30,17 @@
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts, tsx, js, jsx, less, vue, json}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add ."
+    ]
   }
 }
