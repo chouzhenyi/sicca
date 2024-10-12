@@ -15,9 +15,10 @@
     "preinstall": "npx only-allow pnpm",
     "dev:esbuild": "pnpm run --filter @sicca/esbuild dev",
     "deploy:esbuild": "pnpm run --filter @sicca/esbuild deploy",
-    "prettier:esbuild": "pnpm run --filter @sicca/esbuild prettier",
-    "eslint:esbuild": "pnpm run --filter @sicca/esbuild eslint",
-    "prepare": "husky install"
+    "prettier": "prettier --write",
+    "eslint": "eslint --fix --no-warn-ignored",
+    "prepare": "husky",
+    "test": "echo 'test'"
   },
   "engines": {
     "node": ">=18",
@@ -27,20 +28,19 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/prompt-cli": "^19.5.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.29.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{ts, tsx, js, jsx, less, vue, json}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add ."
-    ]
   }
 }

@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node build/dev.conf.mjs",
-    "deploy": "node build/deploy.conf.mjs",
-    "prettier": "prettier --write src/index.ts",
-    "eslint": "eslint --fix --no-warn-ignored src/index.ts"
+    "deploy": "node build/deploy.conf.mjs"
   },
   "keywords": [],
   "author": "",
@@ -24,11 +22,7 @@
     "cheerio": "^1.0.0",
     "esbuild-plugin-less": "^1.3.10",
     "esbuild-plugin-vue3": "^0.4.2",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
     "html-minifier": "^4.0.0",
-    "less-plugin-npm-import": "^2.1.0",
-    "prettier": "^3.3.3"
+    "less-plugin-npm-import": "^2.1.0"
   }
 }
