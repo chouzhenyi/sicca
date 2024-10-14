@@ -18,7 +18,7 @@
     "prettier": "prettier --write",
     "eslint": "eslint --fix --no-warn-ignored",
     "prepare": "husky",
-    "test": "echo 'test'"
+    "test": "pnpm run --filter @sicca/esbuild test && pnpm run --filter @sicca/local test"
   },
   "engines": {
     "node": ">=18",
