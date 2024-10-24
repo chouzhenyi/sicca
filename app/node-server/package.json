@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "node index.mjs"
+    "serve": "node index.mjs",
+    "algorithm": "node demo.mjs"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0"
+  }
 }

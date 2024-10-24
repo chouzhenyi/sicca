@@ -17,7 +17,8 @@
     "deploy:esbuild": "pnpm run --filter @sicca/esbuild deploy",
     "prepare": "husky",
     "test": "pnpm run --filter @sicca/esbuild test && pnpm run --filter @sicca/local test",
-    "dev:trocken": "pnpm run --filter @sicca/trocken dev"
+    "dev:trocken": "pnpm run --filter @sicca/trocken dev",
+    "algorithm": "pnpm run --filter @sicca/node-server algorithm"
   },
   "engines": {
     "node": ">=18",

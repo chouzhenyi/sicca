@@ -79,7 +79,11 @@ importers:
 
   app/local: {}
 
-  app/node-server: {}
+  app/node-server:
+    dependencies:
+      chalk:
+        specifier: ^5.3.0
+        version: 5.3.0
 
   app/rollup:
     dependencies:
