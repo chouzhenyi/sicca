@@ -2,21 +2,10 @@
 
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
-
-const getDataApi = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve({
-        a: "数据A",
-        b: "数据B",
-        c: "数据C",
-      });
-    }, 5e3);
-  });
-};
+import { getDataApi } from "./codeFragments/data/index.mjs";
+import { BlockHeightChange } from "./codeFragments/hooksDemo/index.mjs";
 
 const appDictData = {};
-
 const getSourceProxy = new Proxy(
   {},
   {
@@ -38,20 +27,27 @@ const getSourceProxy = new Proxy(
 );
 
 const Greet = () => {
-  const [num, setNum] = useState(0);
-  const setNumFn = () => {
-    setNum(num + 1);
-    console.log(num);
-  };
-  const getDictItem = () => {
-    console.log(getSourceProxy);
-    // console.log(getSourceProxy?.a);
-  };
+  const actionButtonList = [
+    {
+      title: "获取随机数据",
+      actionClick: async () => {
+        const res = await getDataApi({});
+        console.log("测试获取数据", res);
+      },
+    },
+  ];
   return (
     <>
-      <p> Hello, world!{num}条人</p>
-      <input type="button" value={"增加"} onClick={setNumFn} />
-      <input type="button" value="字典数据A" onClick={getDictItem} />
+      <h1>功能碎片</h1>
+      {actionButtonList.map((actionItem, key) => (
+        <input
+          type="button"
+          key={key}
+          value={actionItem.title}
+          onClick={actionItem.actionClick}
+        />
+      ))}
+      <BlockHeightChange />
     </>
   );
 };

@@ -1,7 +1,7 @@
 /** @format */
 import { rollup } from "rollup";
 const inputOptions = {
-  input: "./src/index.mjs",
+  input: "./src/app.jsx",
   output: {
     file: "dist/bundle.js",
     format: "mjs",

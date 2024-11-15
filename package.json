@@ -7,10 +7,7 @@
   "scripts": {
     "dev:senate": "pnpm run --filter @sicca/senate dev",
     "dev:node-server": "pnpm run --filter @sicca/node-server serve",
-    "build": "pnpm run --filter @sicca/rollup build",
-    "command": "pnpm run --filter @sicca/rollup command",
-    "esbuild": "pnpm run --filter @sicca/rollup esbuild",
-    "buildServer": "pnpm run --filter @sicca/rollup buildServer",
+    "rollup": "pnpm run --filter @sicca/seahorse build",
     "dev": "turbo dev",
     "preinstall": "npx only-allow pnpm",
     "dev:esbuild": "pnpm run --filter @sicca/esbuild dev",
